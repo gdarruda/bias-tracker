@@ -1,0 +1,68 @@
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+
+<dom-module id="twitter-profile-card">
+
+    <style>
+        .avatar {
+            display: inline-block;
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            background-image: url("https://pbs.twimg.com/profile_images/1688766542/avatar_antigo_144.jpg");
+            color: white;
+            line-height: 64px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .fancy .big {
+            font-size: 22px;
+            padding: 8px 0 16px;
+            color: var(--google-grey-500);
+        }
+
+        .fancy .title {
+            position: absolute;
+            top: 30px;
+            left: 100px;
+        }
+
+        a {
+            color: var(--paper-indigo-500);
+        }
+
+        .fancy .medium {
+            font-size: 16px;
+            padding-bottom: 8px;
+        }
+
+
+    </style>
+    <template>
+        <paper-card class='fancy'>
+            <div class="card-content">
+                <div class="avatar"></div>
+                <div class="title">
+                    <div class="big pink">
+                        <a href="teste">
+                            @EstadaoPolitica
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="big">Política Estadão</div>
+                <div class="medium">Twitter oficial da editoria de Política do Estadão. Conheça também nossa página no Facebook.</div>
+            </div>
+        </paper-card>
+    </template>
+
+    <script>
+        Polymer({
+            is: "twitter-profile-card",
+        });
+    </script>
+
+</dom-module>
