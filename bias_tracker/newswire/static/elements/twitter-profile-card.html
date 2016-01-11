@@ -11,9 +11,10 @@
             border-radius: 50%;
             background-image: url("https://pbs.twimg.com/profile_images/1688766542/avatar_antigo_144.jpg");
             color: white;
-            line-height: 64px;
-            font-size: 30px;
-            text-align: center;
+        }
+
+        .fancy {
+            margin-bottom: 24px;
         }
 
         .fancy .big {
@@ -45,16 +46,16 @@
                 <div class="avatar"></div>
                 <div class="title">
                     <div class="big pink">
-                        <a href="teste">
-                            @EstadaoPolitica
+                        <a href="https://twitter.com/{{id}}" target="_blank">
+                            {{id}}
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="card-content">
-                <div class="big">Política Estadão</div>
-                <div class="medium">Twitter oficial da editoria de Política do Estadão. Conheça também nossa página no Facebook.</div>
+                <div class="big">{{name}}</div>
+                <div class="medium">{{description}}</div>
             </div>
         </paper-card>
     </template>
@@ -62,6 +63,11 @@
     <script>
         Polymer({
             is: "twitter-profile-card",
+            properties: {
+                id: {type: String},
+                name: {type: String},
+                description: {type: String}
+            }
         });
     </script>
 

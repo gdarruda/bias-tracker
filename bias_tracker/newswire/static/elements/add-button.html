@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+
+<dom-module id="add-button">
+
+    <style is="custom-style">
+        .round-button {
+            color: white;
+            background-color: var(--google-red-500);;
+            position: fixed;
+            bottom:24px;
+            right:24px;
+            border-radius: 50%;
+            min-width: 56px;
+            min-height: 56px;
+        }
+
+        .big {
+            --iron-icon-height: 32px;
+            --iron-icon-width: 32px;
+        }
+
+    </style>
+
+    <template>
+        <paper-button raised class="round-button" elevation=5>
+            <iron-icon icon="icons:add" class="big"></iron-icon>
+        </paper-button>
+    </template>
+
+    <script>
+        Polymer({
+            is: "add-button"
+        });
+    </script>
+
+</dom-module>

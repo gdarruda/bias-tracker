@@ -11,7 +11,8 @@
     <link rel="import" href="{% static "bower_components/iron-flex-layout/classes/iron-flex-layout.html" %}">
 
     <link rel="import" href="{% static "elements/twitter-profile-card.html" %}">
-    
+    <link rel="import" href="{% static "elements/add-button.html" %}">
+
     <style>
         body {
             font-family: Roboto, 'Noto', 'Helvetica Neue',
@@ -43,8 +44,38 @@
                 <div>Zeitgeist</div>
             </paper-toolbar>
             <div class="main-container">
-                <twitter-profile-card></twitter-profile-card>
+                {% for profile in profiles %}
+                    <twitter-profile-card id="{{ profile.id }}" name="{{ profile.name }}" description="{{ profile.description }}"></twitter-profile-card>
+                {% endfor %}
+                {% for profile in profiles %}
+                    <twitter-profile-card id="{{ profile.id }}" name="{{ profile.name }}" description="{{ profile.description }}"></twitter-profile-card>
+                {% endfor %}
+                <add-button></add-button>
+
+                <button data-dialog="plain">plain</button>
+
+                <simple-overlay id="plain">
+                    Hello world!
+                </simple-overlay>
+
             </div>
         </paper-header-panel>
+
+        <script>
+
+            function clickHandler(e) {
+                if (!e.target.hasAttribute('data-dialog')) {
+                    return;
+                }
+
+                var id = e.target.getAttribute('data-dialog');
+                var dialog = document.getElementById(id);
+                if (dialog) {
+                    dialog.open();
+                }
+            }
+
+        </script>
+
     </body>
 </html>
